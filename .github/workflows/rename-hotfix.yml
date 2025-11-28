@@ -1,0 +1,26 @@
+name: "Rename Hotfix"
+
+on:
+  create:
+    branches:
+      - hotfix/*
+
+jobs:
+  rename-hotfix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get latest release tag
+        id: latestRelease
+        uses: actions/github-script@v8
+        with:
+          result-encoding: string
+          script: |
+            const { data: release } = await github.rest.repos.getLatestRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            return release.tag_name
+
+      - name: Print latest tag
+        run: echo "${{steps.latestRelease.outputs.result}}"
