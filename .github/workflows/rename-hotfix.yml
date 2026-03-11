@@ -6,6 +6,10 @@ on:
 jobs:
   rename-hotfix:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     # on: create does not support branch filters the same way other events do
     # This workaround checks for a `hotfix/` prefix
     if: github.event.ref_type == 'branch' && startsWith(github.event.ref, 'hotfix/')
