@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0-hotfix-1](https://github.com/dudek-j/release-please-sample/compare/v1.2.0...v1.2.0-hotfix-1) (2026-03-11)
+
+
+### Bug Fixes
+
+* typo ([3c56875](https://github.com/dudek-j/release-please-sample/commit/3c568754aa175e6d74bebf3745b75312ca2b1a1c))
+
+
+### Miscellaneous Chores
+
+* rename ([aea7cb7](https://github.com/dudek-j/release-please-sample/commit/aea7cb7ebd8caed8e512b22a75b46389c06cbd5d))
+
 ## [1.2.0](https://github.com/dudek-j/release-please-sample/compare/v1.1.0...v1.2.0) (2026-03-11)
 
 
