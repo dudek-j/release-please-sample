@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.5.0-hotfix-2](https://github.com/dudek-j/release-please-sample/compare/v1.5.0...v1.5.0-hotfix-2) (2026-03-13)
+
+
+### Features
+
+* feature 10 ([7e3d5d5](https://github.com/dudek-j/release-please-sample/commit/7e3d5d57ba0b29b8423d49b3d93f76251137b8f9))
+* feature 11 ([2801e4b](https://github.com/dudek-j/release-please-sample/commit/2801e4b0aeb15126abca002cdf8838b1d44c171e))
+
+
+### Miscellaneous Chores
+
+* hotfix v1.5.0-hotfix-2 ([5b5f936](https://github.com/dudek-j/release-please-sample/commit/5b5f936e28526c97e7af8a7e4b921833839240ad))
+
 ## [1.5.0](https://github.com/dudek-j/release-please-sample/compare/v1.4.0...v1.5.0) (2026-03-13)
 
 
