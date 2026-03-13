@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0-hotfix-1](https://github.com/dudek-j/release-please-sample/compare/v1.3.0...v1.3.0-hotfix-1) (2026-03-13)
+
+
+### Features
+
+* feature 6 ([8945afb](https://github.com/dudek-j/release-please-sample/commit/8945afbdb0d389ad7cd3c9ca7a5ed3c95d0935c4))
+
+
+### Miscellaneous Chores
+
+* hotfix v1.3.0-hotfix-1 ([09a6920](https://github.com/dudek-j/release-please-sample/commit/09a6920d05334ab4225480dd02747381022325d2))
+
 ## [1.3.0](https://github.com/dudek-j/release-please-sample/compare/v1.2.0...v1.3.0) (2026-03-13)
 
 
