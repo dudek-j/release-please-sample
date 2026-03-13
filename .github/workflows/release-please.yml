@@ -1,21 +1,69 @@
+name: Release
+
 on:
   push:
     branches:
       - main
       - hotfix/*
 
-name: Release
 jobs:
+  rename-hotfix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: |
+      github.event.created == true &&
+      github.event.ref_type == 'branch' &&
+      startsWith(github.event.ref, 'hotfix/')
+    steps:
+      - name: Create hotfix name
+        uses: actions/github-script@v8
+        id: hotfixName
+        with:
+          result-encoding: string
+          script: |
+            const { data: release } = await github.rest.repos.getLatestRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+
+            const current = release.tag_name;
+            const existingHotfix = current.match(/-hotfix-(\d+)$/);
+
+            if (existingHotfix) {
+              const fixIndex = Number(existingHotfix[1]);
+              return current.replace(/-hotfix-\d+$/, `-hotfix-${fixIndex + 1}`);
+            }
+
+            return current + "-hotfix-1";
+
+      - name: Check out project
+        uses: actions/checkout@v4
+
+      - name: Commit hotfix name
+        run: |
+          HOTFIX_NAME="${{ steps.hotfixName.outputs.result }}"
+
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git commit --allow-empty \
+            -m "chore: hotfix ${HOTFIX_NAME}" \
+            -m "Release-As: ${HOTFIX_NAME}"
+
+          git push
+
   release-please:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
       issues: write
       pull-requests: write
-    if: github.event.created == false
 
     steps:
-      - uses: googleapis/release-please-action@v4
+      - name: Run release-please
+        uses: googleapis/release-please-action@v4
         with:
           target-branch: ${{ github.ref_name }}
           config-file: release-please-config.json
