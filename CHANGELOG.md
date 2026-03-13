@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/dudek-j/release-please-sample/compare/v1.2.0...v1.3.0) (2026-03-13)
+
+
+### Features
+
+* feature 4 ([e4378eb](https://github.com/dudek-j/release-please-sample/commit/e4378eb31d643dd56f6f18e55566bb5df741c638))
+* feature 5 ([ec6d88a](https://github.com/dudek-j/release-please-sample/commit/ec6d88a8aa39d93397b853ff628c5896f3132f64))
+
 ## [1.2.0](https://github.com/dudek-j/release-please-sample/compare/v1.1.0...v1.2.0) (2026-03-11)
 
 
